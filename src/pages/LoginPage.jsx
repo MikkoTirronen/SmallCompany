@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { renderInput } from "../utils/helperFunctions";
 import styled from "styled-components";
 import Button from "../components/Button";
+import { Link } from "react-router-dom";
 const StyledDiv = styled.div`
   margin-top: 40vh;
   padding: 50px;
@@ -10,6 +11,7 @@ const StyledDiv = styled.div`
   font-size: 20px;
   font-weight: 700;
   text-align: center;
+  min-width:400px;
 `;
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -26,12 +28,15 @@ export default function LoginPage() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     })
-      .then((res) => res.json())
+      .then((res) => res.json()
+        
+      )
       .then((data) => {
         const token = data.token;
         localStorage.setItem("smallCompany", token);
         navigate("/home");
-      });
+      })
+      ;
   }
 
   return (
@@ -43,10 +48,11 @@ export default function LoginPage() {
 
           {renderInput("password", password, setPassword, "Password")}
           <br />
-          <Button margin padding type="submit">
+          <Button wide padding type="submit">
             Login
           </Button>
         </form>
+        <Link to="/create/account"> Create New Account</Link>
       </StyledDiv>
     </div>
   );

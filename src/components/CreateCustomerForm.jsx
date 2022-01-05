@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { renderInput } from "../utils/helperFunctions";
 import Button from "./Button";
 export default function CreateCustomerForm({
@@ -41,7 +42,8 @@ export default function CreateCustomerForm({
 
         <div className="form-group">
           <label htmlFor="vatNumber">Vat Registry Number:</label>
-          <br></br>
+          <br />
+
           {
             <input
               type="text"
@@ -51,6 +53,7 @@ export default function CreateCustomerForm({
               pattern="(SE).{10}"
               title="Must include SE followed by 10 numbers"
               id="vatNumber"
+              style={{ marginTop: 10 + "px", width: 300 + "px" }}
             />
           }
         </div>
@@ -97,8 +100,11 @@ export default function CreateCustomerForm({
             "phoneNumber"
           )}
         </div>
-        <Button margin padding type="submit">Create Customer</Button>
+        <Button margin padding type="submit">
+          Create Customer
+        </Button>
       </form>
+      <Link to="/home">Back to Home</Link>
     </div>
   );
 }

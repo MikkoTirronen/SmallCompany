@@ -2,21 +2,21 @@ import React from 'react'
 import styled, { css}from 'styled-components'
 
 const StyledBanner = styled.div`
-position: top;
-display: d-flex;
-height: 200px;
-width: 100%;
-background-color: #1e1e1e;
-border-color:white;
-border: solid;
-margin-top: 1px;
-min-width:700px;
-${(props) =>
-  props.textWhite &&css`
-  color: white;
-  `
-}
-`
+  position: top;
+  display: d-flex;
+  height: 170px;
+  width: 100%;
+  background-color: #212529;
+  border-color: white;
+  
+  margin-top: 1px;
+  min-width: 700px;
+  ${(props) =>
+    props.textWhite &&
+    css`
+      color: white;
+    `}
+`;
 const StyledHeading1 = styled.h1`
    text-align:center;
    padding-top: 50px;

@@ -15,9 +15,11 @@ export default function UserId() {
         <>
           
         <div key={currentUser.id}>
-        <p>Logged in as:</p>
-        <p>{`${currentUser.firstName} ${currentUser.lastName}`}</p>
-        <p>{currentUser.email}</p>
+            <p>
+              Logged in as: <br />
+              {`${currentUser.firstName} ${currentUser.lastName}`}<br/>
+              {currentUser.email}
+            </p>
         </div>
         </>
         :"Not Found"

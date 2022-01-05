@@ -22,15 +22,15 @@ background-color:white;
 color:black;
 width: 60%;
 margin-left: 140px;
-border: solid
+border: solid;
+min-width: 500px;
 `
 const StyledContainer = styled.div`
   display: d-flex;
-  height: 45%;
   overflow-y: auto;
   overflow-x: hidden;
   width:60%;
-  height: 70vh;
+  height: 73vh;
 `
 
 export default function HomePage() {
@@ -46,8 +46,8 @@ export default function HomePage() {
 
   return (
     <StyledHomePage className="row p-0 g-0">
-      <Banner>Customer Registry</Banner>
-      <StyledNavBar />
+      <Banner className= "border">Customer Registry</Banner>
+      <StyledNavBar className= "border"/>
       <StyledContainer>
       <div className="">
         
@@ -76,9 +76,9 @@ export default function HomePage() {
         <hr />
         <br />
       </div></StyledContainer>
-      <div className="d-flex justify-content-center">
+      <footer className="d-flex justify-content-center bg-dark position-absolute bottom-0 pt-3 border">
         <UserId />
-      </div>
+      </footer>
     </StyledHomePage>
   );
 }

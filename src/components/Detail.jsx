@@ -11,11 +11,18 @@ const StyledContainer = styled.div`
   display:d-flex;
   padding-left: 15vw;
   width: 50vw;
-  margin-left: 20vw;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  margin-left: 14vw;
+  margin-top:150px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   font-weight: 700;
+  border: solid;
+  min-width: 700px;
 `
+const StyledText = styled.p`
+  font-size: 20px;
+  font-weight: 700;
+`;
 
 export default function Detail({ index }) {
   const { setCustomerList } = useContext(CustomerList);
@@ -73,9 +80,6 @@ export default function Detail({ index }) {
     <div>
       {detail ? (
         <div className="container">
-          <div className="">
-            <Link to="/home">Back to Home</Link>
-          </div>
           <StyledContainer className="">
             <EditInput
               id={id}
@@ -143,7 +147,10 @@ export default function Detail({ index }) {
               setValue={setPaymentTerm}
               placeholder={detail.paymentTerm}
             />
-          <Button styledDelete onClick={deleteCustomer}>Delete Customer</Button>
+            <Button styledDelete onClick={deleteCustomer}>
+              Delete Customer
+            </Button><br/>
+            <Link to="/home"><StyledText>Back to Home</StyledText></Link>
           </StyledContainer>
         </div>
       ) : (

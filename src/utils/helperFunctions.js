@@ -1,12 +1,20 @@
 function renderInput(type, value, setValue, placeholder, id) {
     return (
+      <>
         <input
-            type={type}
-            value={value}
-            id={id}
-            onChange={e => setValue(e.target.value)}
-            placeholder={placeholder}/>
-    )
+          style={
+                    { marginTop: 10 + 'px',width: 300}
+          }
+          type={type}
+          value={value}
+          id={id}
+          onChange={(e) => setValue(e.target.value)}
+          placeholder={placeholder}
+        />
+        <br />
+      </>
+    );
+    
 }
 function updateData(setValue) {
     const url = "https://frebi.willandskill.eu/api/v1/customers"
