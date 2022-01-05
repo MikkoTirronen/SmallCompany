@@ -5,15 +5,15 @@ import Button from './Button';
 const StyledNav = styled.div`
   display: flex;
   flex-direction: column;
-  
   margin-left: 10vw;
   padding-top: 200px;
   width: 220px;
   height: 65vh;
   background-color: #212529;
-  border-color: white;
   color: black;
-  margin-top: 40px
+  margin-top: 40px;
+  border-color: white;
+  
 `;
 const StyledHeading = styled.h3`
   color: white;

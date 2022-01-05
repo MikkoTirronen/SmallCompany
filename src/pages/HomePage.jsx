@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, {useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CustomerList, LoggedInUser } from "../App";
 import { fetchData } from "../utils/helperFunctions";
-import UserId from "../components/UserId";
+
 import StyledNavBar from "../components/StyledNavBar";
 
 import styled from "styled-components";
@@ -19,24 +19,24 @@ const StyledHomePage = styled.div`
   height: 100%;
 `;
 const StyledCustomerContainer = styled.div`
-background-color:white;
-color:black;
-width: 60%;
-margin-left: 140px;
-border: solid;
-min-width: 500px;
-`
+  background-color: white;
+  color: black;
+  width: 60%;
+  margin-left: 140px;
+  border: solid;
+  min-width: 500px;
+`;
 const StyledContainer = styled.div`
   display: d-flex;
   overflow-y: auto;
   overflow-x: hidden;
-  width:60%;
+  width: 60%;
   height: 73vh;
-`
+`;
 
 export default function HomePage() {
   const { customerList, setCustomerList } = useContext(CustomerList);
-  const { currentUser, setCurrentUser } = useContext(LoggedInUser);
+  const {setCurrentUser } = useContext(LoggedInUser);
   const currentUserUrl = "https://frebi.willandskill.eu/api/v1/me";
   const customerListUrl = "https://frebi.willandskill.eu/api/v1/customers";
 
@@ -47,37 +47,34 @@ export default function HomePage() {
 
   return (
     <StyledHomePage className="row p-0 g-0">
-      <Banner className= "border">Customer Registry</Banner>
-      <StyledNavBar className= "border"/>
+      <Banner className="border">Customer Registry</Banner>
+      <StyledNavBar className="border" />
       <StyledContainer>
-      <div className="">
-        
-      
-        {customerList &&
-          customerList.results.map((item, index) => {
-            return (
-              <div className="row" key={index} >
-                <hr />
-                
+        <div className="">
+          {customerList &&
+            customerList.results.map((item, index) => {
+              return (
+                <div className="row" key={index}>
+                  <hr />
 
-                <StyledCustomerContainer>
-                  <label htmlFor="name">Name: </label>
-                  <p id="name">{item.name}</p>
-                  <label htmlFor="email">Email:</label>
-                  <p id="email">{item.email}</p>
-                  <label htmlFor="phone">Phone Number:</label>
-                  <p id="phone">{item.phoneNumber}</p>
-                  <Link to={`/${index}`}>...More</Link>
-                </StyledCustomerContainer>
-                
-              </div>
-            );
-          })}
-        
-        <hr />
-        <br />
-      </div></StyledContainer>
-      <Footer/>
+                  <StyledCustomerContainer>
+                    <label htmlFor="name">Name: </label>
+                    <p id="name">{item.name}</p>
+                    <label htmlFor="email">Email:</label>
+                    <p id="email">{item.email}</p>
+                    <label htmlFor="phone">Phone Number:</label>
+                    <p id="phone">{item.phoneNumber}</p>
+                    <Link to={`/${index}`}>...More</Link>
+                  </StyledCustomerContainer>
+                </div>
+              );
+            })}
+
+          <hr />
+          <br />
+        </div>
+      </StyledContainer>
+      <Footer />
     </StyledHomePage>
   );
 }
