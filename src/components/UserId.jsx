@@ -7,7 +7,7 @@ const StyledDiv = styled.div`
     font-size: 15px;
     font-weight: 500;
     width:100vw;
-    margin-left 450px;
+    margin-left 40vh;
 `
 
 export default function UserId() {

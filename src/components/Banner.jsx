@@ -18,7 +18,7 @@ const StyledBanner = styled.div`
     `}
 `;
 const StyledHeading1 = styled.h1`
-   margin-left:170px;
+   margin-left:20vw;
    padding-top: 50px;
    font-size: 80px;
    min-width: 820px;
