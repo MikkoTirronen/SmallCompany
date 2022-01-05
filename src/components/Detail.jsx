@@ -3,7 +3,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { updateData } from "../utils/helperFunctions";
 import { CustomerList } from "../App";
 import EditInput from "./EditInput";
-import EditInputClassTest from "../FailedExperiments/EditInputClassTest";
 import styled from "styled-components";
 import Button from "./Button";
 import Footer from "./Footer";
