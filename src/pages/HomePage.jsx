@@ -7,6 +7,7 @@ import StyledNavBar from "../components/StyledNavBar";
 
 import styled from "styled-components";
 import Banner from "../components/Banner";
+import Footer from "../components/Footer";
 
 const StyledHomePage = styled.div`
   display: d-flex;
@@ -76,9 +77,7 @@ export default function HomePage() {
         <hr />
         <br />
       </div></StyledContainer>
-      <footer className="d-flex justify-content-center bg-dark position-absolute bottom-0 pt-3 border">
-        <UserId />
-      </footer>
+      <Footer/>
     </StyledHomePage>
   );
 }

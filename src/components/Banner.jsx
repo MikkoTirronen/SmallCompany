@@ -18,9 +18,10 @@ const StyledBanner = styled.div`
     `}
 `;
 const StyledHeading1 = styled.h1`
-   text-align:center;
+   margin-left:170px;
    padding-top: 50px;
-   font-size: 80px
+   font-size: 80px;
+   min-width: 820px;
 `
 
 export default function Banner(props) {

@@ -1,6 +1,6 @@
 import React, { useState} from 'react'
 import { useNavigate } from 'react-router-dom';
-import { renderInput } from '../utils/helperFunctions';
+import { renderInput, fetchData } from '../utils/helperFunctions';
 import styled from 'styled-components';
 import Button from '../components/Button';
 const StyledDiv = styled.div`

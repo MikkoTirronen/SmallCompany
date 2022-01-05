@@ -1,6 +1,14 @@
 import React, { useContext} from "react";
 import { LoggedInUser } from "../App";
+import styled from "styled-components";
 
+const StyledDiv = styled.div`
+    color:white;
+    font-size: 15px;
+    font-weight: 500;
+    width:100vw;
+    margin-left 450px;
+`
 
 export default function UserId() {
  
@@ -9,7 +17,7 @@ export default function UserId() {
 
  
   return (
-    <div>
+    <StyledDiv>
       {LoggedInUser ?
         
         <>
@@ -25,6 +33,6 @@ export default function UserId() {
         :"Not Found"
       }
       
-    </div>
+    </StyledDiv>
   );
 }

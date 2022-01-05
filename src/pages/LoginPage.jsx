@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
 const StyledDiv = styled.div`
-  margin-top: 40vh;
+  margin-top: 30vh;
   padding: 50px;
   border: solid;
   font-size: 20px;

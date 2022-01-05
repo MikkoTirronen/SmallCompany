@@ -6,18 +6,20 @@ import EditInput from "./EditInput";
 import EditInputClassTest from "../FailedExperiments/EditInputClassTest";
 import styled from "styled-components";
 import Button from "./Button";
+import Footer from "./Footer";
+
 const StyledContainer = styled.div`
   background-color:white;
   display:d-flex;
   padding-left: 15vw;
   width: 50vw;
-  margin-left: 14vw;
-  margin-top:150px;
+  margin-left: 250px;
+  margin-top: 50px;
   padding-top: 20px;
   padding-bottom: 20px;
   font-weight: 700;
   border: solid;
-  min-width: 700px;
+  min-width: 650px;
 `
 const StyledText = styled.p`
   font-size: 20px;
@@ -77,9 +79,10 @@ export default function Detail({ index }) {
   }
 
   return (
+      <>
     <div>
       {detail ? (
-        <div className="container">
+        <div className="container-fluid">
           <StyledContainer className="">
             <EditInput
               id={id}
@@ -150,12 +153,15 @@ export default function Detail({ index }) {
             <Button styledDelete onClick={deleteCustomer}>
               Delete Customer
             </Button><br/>
-            <Link to="/home"><StyledText>Back to Home</StyledText></Link>
+            <Link to="/home"><StyledText> Back to Home</StyledText></Link>
           </StyledContainer>
         </div>
       ) : (
         "Page Not Found!"
       )}
+      
     </div>
+    <Footer></Footer>
+    </>
   );
 }

@@ -5,19 +5,20 @@ import CreateCustomerForm from "../components/CreateCustomerForm";
 import { updateData } from "../utils/helperFunctions";
 import styled from "styled-components";
 import Banner from "../components/Banner";
+import Footer from "../components/Footer";
 
 
 const StyledContainer = styled.div`
 background-color:white;
 text-align: center;
 width: 40vw;
-height: 70vh;
+height: 73vh;
 border:solid;
 border-color: black;
 font-size: 20px;
 font-weight: 700;
 line-height: 30px;
-padding-top: 50px;
+padding-top: 25px;
 margin-top:10px;
 min-width: 700px
 `
@@ -61,7 +62,7 @@ export default function CreateCustomerPage() {
       .then((data) => console.log(data))
       .then(updateData(setCustomerList))
       .then(navigate("/home"));
-  }// 
+  }
   return (
     <div className="row d-flex justify-content-center p-0 g-0">
         <Banner textWhite>Create Customer</Banner>
@@ -85,7 +86,8 @@ export default function CreateCustomerPage() {
             phoneNumber={phoneNumber}
             setPhoneNumber={setPhoneNumber}
             handleOnSubmit={handleOnSubmit}
-            />
+        />
+          
             </StyledContainer>
           {/* <form onSubmit={handleOnSubmit} >
           <div className="form-group">
@@ -132,7 +134,7 @@ export default function CreateCustomerPage() {
             </div>
             <button type="submit">Create Customer</button>
           </form> */}
-        
+          <Footer/>
       </div>
   );
 }
